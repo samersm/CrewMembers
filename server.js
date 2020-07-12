@@ -8,6 +8,9 @@ app.get('/', (req, res) => res.json({ msg: 'Welcome to the CrewMembers API...' }
 // Connect Database
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 // Define Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
